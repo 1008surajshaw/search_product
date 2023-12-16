@@ -11,12 +11,11 @@ const FilterData: React.FC = () => {
   const [data, setData] = useState<Product[]>([]);
   const [record, setRecord] = useState<Product[]>([]);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [searchText, setSearchText] = useState<string>("");
-  const [loading, setLoading] = useState(false);
+ 
 
   const fetchDatas = async () => {
     const API_URL = "https://fakestoreapi.com/products";
-    setLoading(true);
+    
     try {
       const resp = await fetch(API_URL);
       const datas: Product[] = await resp.json();
@@ -25,7 +24,7 @@ const FilterData: React.FC = () => {
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
-      setLoading(false);
+      
     }
   };
 
@@ -34,7 +33,7 @@ const FilterData: React.FC = () => {
   }, []);
 
   const filterData = debounce((value: string) => {
-    setSearchText(value);
+    
     const filteredData = data.filter(product =>
       product.title.toLowerCase().includes(value.toLowerCase())
     );
@@ -88,7 +87,7 @@ const FilterData: React.FC = () => {
           {record.map((option) => (
 
 
-            <option key={option.id} value={option.title}>
+            <option key={option.id} value={option.title} className="option">
               {option.title}
             </option>
           ))}

@@ -167,6 +167,12 @@ body{
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  
+  @media screen and (max-width:720px){
+    .form-content{
+      width: 90vh;
+    }
+  }
 }
 .input-box {
   width: 20rem;
@@ -188,4 +194,8 @@ body{
 }
 .parent-div{
   margin-bottom: 60px;
+}
+.option{
+  max-width: 80rem;
+  width: 200px;
 }

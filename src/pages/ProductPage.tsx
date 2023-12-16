@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ReactStars from 'react-stars'
-import { FaStar } from "react-icons/fa"
+import ReactStars from 'react-stars';
+
 interface Product {
   id: string;
   title: string;
@@ -55,9 +55,7 @@ export const ProductPage = () => {
               value={product.rating.rate}
               size={30}
               edit={false}
-              activeColor="#ffd700"
-              emptyIcon={<FaStar />}
-              fullIcon={<FaStar />}
+              color1="#ffd700"
               />
               <h3 style={{color:'green',fontWeight:600,fontSize:24}}>$:{product.price}</h3>
             <h2>No of people Purchase {product.rating.count}+</h2>

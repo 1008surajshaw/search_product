@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store"; 
+import { RootState } from "../redux/Store";
 import { add, remove } from "../redux/Slices/CartSlice";
 import toast from "react-hot-toast";
 import { CiHeart } from "react-icons/ci";
